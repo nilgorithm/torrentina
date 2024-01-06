@@ -9,6 +9,7 @@ from itertools import islice
 
 def index_number(ext: str, path: str)->list:
     arr = [file for file in glob.glob(f"{path}/*.{ext}")]
+    print(f"{path}/*.{ext}")
     res = dict()
     for fp in range(len(arr)):
         cur_arr = re.findall(pattern=r"\d", string=arr[fp])
@@ -22,8 +23,8 @@ def index_number(ext: str, path: str)->list:
     return res
 
 
-video_path = "/home/kmd010/Downloads/Vinland.Saga.Season2.WEBRip.1080p"
-audio_path = "/home/kmd010/Downloads/Vinland.Saga.Season2.WEBRip.1080p/RUS Sound/AniLibria"
+video_path = "/home/pidragoninc/Videos/MiniDLNA/films/Baccano"
+audio_path = "/home/pidragoninc/Videos/MiniDLNA/films/Baccano/sound"
 video_extension = "mkv" #потом надо сделать рекурсию которая по диру ищет видео
 audio_extension = "mka" #потом надо сделать рекурсию которая по диру ищет аудио
 
