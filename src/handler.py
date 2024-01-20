@@ -138,7 +138,7 @@ async def remove_torrent_by_numb(message: Message, state: FSMContext) -> None:
     # потому что по сути может что-то не докачаться
     dby_numb_torrent = re.search(pattern="\d+", string=message.text)
     if dby_numb_torrent:
-        dby_numb_torrent = int(dby_numb_torrent.groups())
+        dby_numb_torrent = int(dby_numb_torrent.group())
         data = await state.get_data()
         dactive = data.get("act_torrents").get(dby_numb_torrent)
         if dactive:
